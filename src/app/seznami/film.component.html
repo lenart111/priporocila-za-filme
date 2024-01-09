@@ -1,0 +1,14 @@
+<div *ngIf="film">
+    <h2>{{film.naslov}}</h2>
+
+    <p>Dolzina filma: {{film.dolzina}}</p>
+    <p>Leto izida: {{film.leto_izida | date: 'dd. MM. yyyy'}}</p>
+    <h4>Ocene</h4>
+    <ul *ngFor="let ocena of ocene" class="artikli">
+        <li><b>{{ocena.uporabnik.uporabnisko_ime}}: </b></li>
+        <li><b>{{ocena.ocena}}</b> <span *ngIf="ocena.komentar"> &#8211; {{ocena.komentar}}</span></li>
+    </ul>
+
+    <br>
+    <button (click)="nazaj()">Nazaj</button>
+</div>

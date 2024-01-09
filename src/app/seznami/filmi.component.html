@@ -1,0 +1,13 @@
+<ul class="seznami">
+    <li *ngFor="let film of filmi" (click)="naPodrobnosti(film)">
+        <span>{{film.naslov}}</span>
+
+
+        <button class="delete"
+                (click)="delete(film); $event.stopPropagation()">x
+        </button>
+    </li>
+</ul>
+<button (click)="openModal()">Dodaj Nov Film</button>
+
+<app-add-film-modal *ngIf="showModal" (closeModal)="closeModal()" (submitFilm)="addFilm($event)"></app-add-film-modal>

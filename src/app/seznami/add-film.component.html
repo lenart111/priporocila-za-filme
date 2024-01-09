@@ -1,0 +1,11 @@
+
+<div class="modal">
+    <form (ngSubmit)="onSubmit()">
+        <input [(ngModel)]="naslov" type="text" placeholder="Naslov" name="naslov" required>
+        <input [(ngModel)]="dolzina" type="number" placeholder="Dolzina" name="dolzina" required>
+        <input [(ngModel)]="leto_izida" type="number" placeholder="Leto izida" name="leto_izida" required>
+        <input [(ngModel)]="id_zanr" type="number" placeholder="ID Žanra" name="id_zanr" required>
+        <button type="submit">Dodaj Film</button>
+        <button type="button" (click)="closeModal.emit()">Zapri</button>
+    </form>
+</div>
